@@ -10,6 +10,9 @@ export class AppComponent {
   title = 'energy-monitor';
 
   constructor(appService: AppService) {
+    appService.getDataPeriod().subscribe(data => console.log(data))
     appService.getSolarEdgeSiteDetails().subscribe(data => console.log(data))
+    appService.getEnergyToday().subscribe(data => console.log(data))
+    appService.getEnergyYesterday().subscribe(data => console.log(data))
   }
 }
